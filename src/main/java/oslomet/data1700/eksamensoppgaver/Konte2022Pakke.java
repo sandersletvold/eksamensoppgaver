@@ -16,23 +16,24 @@ public class Konte2022Pakke {
     private Double VEKT;
     private Double VOLUM;
 
-    public Konte2022Pakke(Integer PID, Double VOLUM, Double VEKT, String EIER, Integer LID) {
-        this.VOLUM = VOLUM;
-        this.VEKT = VEKT;
-        this.EIER = EIER;
-        this.LID = LID;
+    public Konte2022Pakke(Integer PID, Integer LID, String EIER, Double VEKT, Double VOLUM) {
         this.PID = PID;
-    }
-
-    public Konte2022Pakke(Double VOLUM, Double VEKT, String EIER, Integer LID) {
-        this.VOLUM = VOLUM;
-        this.VEKT = VEKT;
-        this.EIER = EIER;
         this.LID = LID;
+        this.EIER = EIER;
+        this.VEKT = VEKT;
+        this.VOLUM = VOLUM;
     }
 
     public Konte2022Pakke() {
 
+    }
+
+    public Integer getPID() {
+        return PID;
+    }
+
+    public void setPID(Integer PID) {
+        this.PID = PID;
     }
 
     public Integer getLID() {
@@ -65,13 +66,5 @@ public class Konte2022Pakke {
 
     public void setVOLUM(Double VOLUM) {
         this.VOLUM = VOLUM;
-    }
-
-    public Integer getPID() {
-        return PID;
-    }
-
-    public void setPID(Integer PID) {
-        this.PID = PID;
     }
 }

@@ -47,3 +47,19 @@ function reg() {
         $("#generelt").html("Kunne ikke sende pakke til server");
     }
 }
+
+// Oppgave 6
+function hentallepakker() {
+    $.get("/hentallepakker", function (data){
+        formaterdata(data);
+    });
+}
+
+function formaterdata(data) {
+    let ut = "<table><tr><th>LID</th><th>EIER</th><th>VEKT</th><th>VOLUM</th></tr>";
+    for (let i of data) {
+        ut += "<tr><td>"+i.LID+"</td><td>"+i.EIER+"</td><td>"+i.VEKT+"</td><td>"+i.VOLUM+"</td></tr>";
+    }
+    ut += "</table>";
+    $("#generelt").html(ut);
+}
